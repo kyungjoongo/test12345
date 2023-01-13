@@ -1,0 +1,24 @@
+POST http://localhost:3000/board
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJJZCI6ImxhbmNlNzciLCJtZW1iZXJOYW1lIjoi6rOg6rK97KSAIiwiaWF0IjoxNjczNjQ5NzI2LCJleHAiOjE2NzM3MzYxMjZ9.dogc1H9aYG3g3FTvy7kghaou1qC6AX32dw2tnPIjAzQ
+
+{
+    "name": "고경준천재님ㄴㅇlfsdkfldks",
+    "contents": "dsflkgsdflkglsdfglsdk",
+    "title": "dsflkgsdflkglsdfglsdk",
+    "createDate": "dsflkgsdflkglsdfglsdk",
+    "pwd": "dsflkgsdflkglsdfglsdk"
+}
+
+###
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "id" : "lance77",
+    "password" : "ka1114"
+
+}
+
+###

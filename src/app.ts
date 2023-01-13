@@ -1,0 +1,65 @@
+import express from "express";
+import bodyParser from "body-parser";
+import http from "http";
+import connectMongo from "./config/mongoConnect";
+import indexRoutes from "./routes/IndexRoute";
+import boardRoutes from "./routes/BoardRoutes";
+
+const path = require('path');
+const app = express();
+const server = http.createServer(app);
+const {Server} = require("socket.io");
+const io = new Server(server);
+
+//todo: ####################
+//todo: Production enviroment
+//todo: ####################
+const isProduction = process.env.NODE_ENV === "production";
+
+app.set('view engine', 'ejs');
+app.set('views', './lib/views');
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json());
+
+//todo: ####################
+//todo: Connect Mongo
+//todo: ####################
+connectMongo().then(() => {
+    console.log("Connected MongoDB====>");
+});
+
+//todo: ####################
+//todo:  includes Routes
+//todo: ####################
+
+app.use("/", indexRoutes);
+app.use("/board", boardRoutes);
+
+
+io.on('connection', (socket: any) => {
+    console.log('a user connected');
+    socket.on('chat_message', async (msg: any) => {
+        console.log('message: ' + msg);
+        io.emit('chat_message', msg)
+
+        let messageOne = {
+            userName: msg.userName,
+            roomName: msg.roomName,
+            message: msg.message,
+            createdAt: new Date(),
+        }
+        /*const result = await chatMessageModel.create(
+            messageOne
+        );*/
+        //console.log("result===>", result);
+    });
+
+});
+
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+    console.log(`Server is running on PORT ${PORT}`);
+});
+
+
+
