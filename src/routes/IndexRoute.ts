@@ -1,6 +1,9 @@
 import express, {NextFunction, Request, Response} from "express";
+import {keyConfig} from "../config/keyConfig";
 
-const jwt = require('jsonwebtoken');
+//const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken'
+
 const indexRoutes = express.Router();
 
 
@@ -38,12 +41,12 @@ indexRoutes.post('/login', function (req, res, next) {
 
     if (count > 0) {
         if (memberItem?.password == memberPassword) {
-            const secret = "005c9780fe7c11eb89b4e39719de58a5";
+
             jwt.sign({
                     memberId: memberItem?.id,
                     memberName: memberItem?.name
                 },
-                secret,
+                keyConfig.secret,
                 {
                     expiresIn: '1d'
                 },
@@ -65,8 +68,6 @@ indexRoutes.post('/login', function (req, res, next) {
         res.status(401).json({success: false, errormessage: 'id and password are not identical'});
     }
 });
-
-
 
 
 export default indexRoutes;

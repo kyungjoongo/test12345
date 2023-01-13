@@ -1,6 +1,6 @@
 POST http://localhost:3000/board
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJJZCI6ImxhbmNlNzciLCJtZW1iZXJOYW1lIjoi6rOg6rK97KSAIiwiaWF0IjoxNjczNjQ5NzI2LCJleHAiOjE2NzM3MzYxMjZ9.dogc1H9aYG3g3FTvy7kghaou1qC6AX32dw2tnPIjAzQ
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJJZCI6ImxhbmNlNzciLCJtZW1iZXJOYW1lIjoi6rOg6rK97KSAIiwiaWF0IjoxNjczNjUxOTc3LCJleHAiOjE2NzM3MzgzNzd9.QNuyLPJeuAxIjAhOUxRCFSc9EPZf2xZ7b9r1HMI0B-s
 
 {
     "name": "고경준천재님ㄴㅇlfsdkfldks",
