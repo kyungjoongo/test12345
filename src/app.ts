@@ -17,7 +17,7 @@ const io = new Server(server);
 const isProduction = process.env.NODE_ENV === "production";
 
 app.set('view engine', 'ejs');
-app.set('views', './lib/views');
+app.set('views', 'src/views');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 
@@ -27,14 +27,6 @@ app.use(bodyParser.json());
 connectMongo().then(() => {
     console.log("Connected MongoDB====>");
 });
-
-//todo: ####################
-//todo:  includes Routes
-//todo: ####################
-
-app.use("/", indexRoutes);
-app.use("/board", boardRoutes);
-
 
 io.on('connection', (socket: any) => {
     console.log('a user connected');
@@ -55,6 +47,16 @@ io.on('connection', (socket: any) => {
     });
 
 });
+
+
+//todo: ####################
+//todo:  includes Routes
+//todo: ####################
+
+app.use("/", indexRoutes);
+app.use("/", boardRoutes);
+
+
 
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {

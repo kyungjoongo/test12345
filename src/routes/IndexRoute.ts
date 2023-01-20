@@ -9,14 +9,22 @@ const indexRoutes = express.Router();
 
 indexRoutes.get("/", async (req: Request, res: Response, next: NextFunction) => {
 
-    let json = {
-        "result": "sdflksdlkfsdlkf",
-        "result1": "sdflksdlkfsdlkf",
-        "result2": "sdflksdlkfsdlkf",
-
-    }
-
-    return res.json(json);
+    return res.render('index', {
+        data : [
+            {
+                name: 'kyungjoon',
+                age: 40,
+            },
+            {
+                name: 'kyungjoon2',
+                age: 32,
+            },
+            {
+                name: 'kyungjoon3',
+                age: 46,
+            },
+        ]
+    })
 });
 
 indexRoutes.post('/login', function (req, res, next) {

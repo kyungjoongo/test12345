@@ -21,9 +21,7 @@ export const authMiddleware = async (req: Express.Request, res: Express.Response
                     }
                 });
             });
-
             console.log("tokenInfo==>", tokenInfo)
-
             //req.tokenInfo = tokenInfo;
             next();
         } catch (err) {
