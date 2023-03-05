@@ -1,0 +1,19 @@
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "id": "lance77",
+    "password": "ka1114"
+}
+
+###
+
+GET http://localhost:3000/board
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJJZCI6ImxhbmNlNzciLCJtZW1iZXJOYW1lIjoi6rOg6rK97KSAIiwiaWF0IjoxNjc4MDQxNzUwLCJleHAiOjE2NzgxMjgxNTB9.Cp0bZIxgvhellvFugGFGcCMrdDVnLk6LO8PJPynyOhE
+
+{}
+
+###
+
+

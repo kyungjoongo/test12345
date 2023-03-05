@@ -4,6 +4,7 @@ import http from "http";
 import connectMongo from "./config/mongoConnect";
 import indexRoutes from "./routes/IndexRoute";
 import boardRoutes from "./routes/BoardRoutes";
+import loginRouter from "./routes/LoginRouter";
 
 const path = require('path');
 const app = express();
@@ -54,8 +55,8 @@ io.on('connection', (socket: any) => {
 //todo: ####################
 
 app.use("/", indexRoutes);
+app.use("/", loginRouter);
 app.use("/", boardRoutes);
-
 
 
 const PORT = process.env.PORT || 3000;

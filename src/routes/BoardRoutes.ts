@@ -5,7 +5,7 @@ import {authMiddleware} from "../middleware/authMiddleware";
 const boardRoutes = express.Router();
 
 //todo: GetAll Data
-boardRoutes.get("/board", async (req: Request, res: Response, next: NextFunction) => {
+boardRoutes.get("/board", authMiddleware, async (req: Request, res: Response, next: NextFunction) => {
     try {
         let results = await boardModel.find();
 
