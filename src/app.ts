@@ -5,7 +5,7 @@ import connectMongo from "./config/mongoConnect";
 import indexRoutes from "./routes/IndexRoute";
 import boardRoutes from "./routes/BoardRoutes";
 import loginRouter from "./routes/LoginRouter";
-
+// @ts-ignore
 const path = require('path');
 const app = express();
 const server = http.createServer(app);
@@ -19,8 +19,9 @@ const isProduction = process.env.NODE_ENV === "production";
 
 app.set('view engine', 'ejs');
 app.set('views', 'src/views');
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //todo: ####################
 //todo: Connect Mongo

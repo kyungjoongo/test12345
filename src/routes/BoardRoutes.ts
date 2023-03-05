@@ -2,10 +2,12 @@ import express, {NextFunction, Request, Response} from "express";
 import boardModel from "../model/BoardModel";
 import {httpStatus} from "../config/httpStatus";
 import {authMiddleware} from "../middleware/authMiddleware";
+
 const boardRoutes = express.Router();
 
+
 //todo: GetAll Data
-boardRoutes.get("/board", authMiddleware, async (req: Request, res: Response, next: NextFunction) => {
+boardRoutes.get("/board",  async (req: Request, res: Response, next: NextFunction) => {
     try {
         let results = await boardModel.find();
 
@@ -17,9 +19,14 @@ boardRoutes.get("/board", authMiddleware, async (req: Request, res: Response, ne
 });
 
 
-//todo: authMiddlewareauthMiddleware
 //todo: Create
-boardRoutes.post("/board", authMiddleware, async (req: Request, res: Response, next: NextFunction) => {
+boardRoutes.post("/board", async (req: Request, res: Response, next: NextFunction) => {
+
+
+    console.log("sldkflskdflksdf===>" ,req.body);
+    console.log("sldkflskdflksdf===>" ,req.body);
+
+
     const result = await boardModel.create(
         req.body
     );
@@ -41,3 +48,17 @@ boardRoutes.get("/board/:id", async (req: Request, res: Response, next: NextFunc
 
 
 export default boardRoutes;
+
+
+//todo: GetAll Data
+//todo; authMiddleware
+// boardRoutes.get("/board", authMiddleware, async (req: Request, res: Response, next: NextFunction) => {
+//     try {
+//         let results = await boardModel.find();
+//
+//         console.log(results);
+//         return res.json(results);
+//     } catch (error: any) {
+//         return res.status(Number(httpStatus.INTERNAL_SERVER_ERROR)).json({error: error.toString()});
+//     }
+// });

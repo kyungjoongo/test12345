@@ -12,12 +12,27 @@
 </head>
 <body>
 <h1>test!!!</h1>
-<ul>
-    <% data.forEach(function(dataOne){ %>
-        <li>
-            <%= dataOne.name %>
-        </li>
-    <% }); %>
-</ul>
+<!--<ul>-->
+<!--    <% data.forEach(function(dataOne){ %>-->
+<!--        <li>-->
+<!--            <%= dataOne.name %>-->
+<!--        </li>-->
+<!--    <% }); %>-->
+<!--</ul>-->
+<form method="post" action="/board">
+    name: <input name="name" id="name"/>
+    <br/>
+    <br/>
+    content: <input name="contents" id="contents"/>
+    <br/>
+    <br/>
+    title: <input name="title" id="title"/>
+    pwd: <input name="pwd" id="pwd"/>
+    <br/>
+    <br/>
+    <button type="submit" value="submit">
+        submit
+    </button>
+</form>
 </body>
 </html>
