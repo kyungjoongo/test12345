@@ -7,7 +7,7 @@ const boardRoutes = express.Router();
 
 
 //todo: GetAll Data
-boardRoutes.get("/board",  async (req: Request, res: Response, next: NextFunction) => {
+boardRoutes.get("/board", authMiddleware, async (req: Request, res: Response, next: NextFunction) => {
     try {
         let results = await boardModel.find();
 
@@ -23,8 +23,8 @@ boardRoutes.get("/board",  async (req: Request, res: Response, next: NextFunctio
 boardRoutes.post("/board", async (req: Request, res: Response, next: NextFunction) => {
 
 
-    console.log("sldkflskdflksdf===>" ,req.body);
-    console.log("sldkflskdflksdf===>" ,req.body);
+    console.log("sldkflskdflksdf===>", req.body);
+    console.log("sldkflskdflksdf===>", req.body);
 
 
     const result = await boardModel.create(

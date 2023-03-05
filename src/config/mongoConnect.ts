@@ -29,9 +29,10 @@ mongoose.connection.on("error", error => {
     process.exit(1);
 });
 
+
+//todo: ##################
 //todo: Db접속 정보 셋팅 부분..
-//todo: Db접속 정보 셋팅 부분..
-//todo: Db접속 정보 셋팅 부분..
+//todo: ##################
 mongoose.set("debug", dbDevConfig.mongoDebug);
 
 const connectMongo = async () => {
