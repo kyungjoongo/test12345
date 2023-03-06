@@ -1,8 +1,6 @@
 import express, {NextFunction, Request, Response} from "express";
 import boardModel from "../model/BoardModel";
 import {httpStatus} from "../config/httpStatus";
-import {authMiddleware} from "../middleware/authMiddleware";
-import {Types} from "mongoose";
 
 const boardRoutes = express.Router();
 
