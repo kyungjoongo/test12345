@@ -1,0 +1,18 @@
+POST http://localhost:3000/comment
+Content-Type: application/json
+
+{
+    "boardId" : "6404e799d444c420b069e2a3",
+    "comment":"천재님 comment000002",
+    "createDate": "slfkgsldfkg",
+    "pwd":"slfkgsldfkg"
+}
+
+###
+
+GET http://localhost:3000/comment/6404e799d444c420b069e2a3
+Content-Type: application/json
+
+{}
+
+###

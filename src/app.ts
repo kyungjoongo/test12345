@@ -5,6 +5,7 @@ import connectMongo from "./config/mongoConnect";
 import indexRoutes from "./routes/IndexRoute";
 import boardRoutes from "./routes/BoardRoutes";
 import loginRouter from "./routes/LoginRouter";
+import commentRouter from "./routes/CommentRoutes";
 // @ts-ignore
 const path = require('path');
 const app = express();
@@ -58,6 +59,7 @@ io.on('connection', (socket: any) => {
 app.use("/", indexRoutes);
 app.use("/", loginRouter);
 app.use("/", boardRoutes);
+app.use("/", commentRouter);
 
 
 const PORT = process.env.PORT || 3000;
