@@ -6,6 +6,7 @@ import indexRoutes from "./routes/IndexRoute";
 import boardRoutes from "./routes/BoardRoutes";
 import loginRouter from "./routes/LoginRouter";
 import commentRouter from "./routes/CommentRoutes";
+import uploadRouter from "./routes/UploadRoute";
 // @ts-ignore
 const path = require('path');
 const app = express();
@@ -21,7 +22,7 @@ const isProduction = process.env.NODE_ENV === "production";
 app.set('view engine', 'ejs');
 app.set('views', 'src/views');
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //todo: ####################
@@ -55,11 +56,11 @@ io.on('connection', (socket: any) => {
 //todo: ####################
 //todo:  includes Routes
 //todo: ####################
-
 app.use("/", indexRoutes);
 app.use("/", loginRouter);
 app.use("/", boardRoutes);
 app.use("/", commentRouter);
+app.use("/", uploadRouter);
 
 
 const PORT = process.env.PORT || 3000;

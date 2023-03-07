@@ -19,6 +19,22 @@
 <!--        </li>-->
 <!--    <% }); %>-->
 <!--</ul>-->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="text/javascript">
+    //const axios = require("axios");
+    async function requestImg() {
+        // form tag를 사용하지 않아도 formdata를 만들 수 있습니다.
+        let formData = new FormData();
+        formData.append('image', event.target.files[0]);
+        // 생성한 폼 데이터에 파일 객체를 할당하고, 서버에 요청을 보냅니다.
+        try {
+            const imageRes = await axios.post(`http://localhost:3000/upload`, formData);
+        } catch (error) {
+            console.log(error);
+            alert(error)
+        }
+    }
+</script>
 <form method="post" action="/board">
     name: <input name="name" id="name"/>
     <br/>
@@ -30,6 +46,13 @@
     pwd: <input name="pwd" id="pwd"/>
     <br/>
     <br/>
+    <input
+            type='file'
+            id='image_uploads'
+            name='image'
+            accept='image/*'
+            onChange="requestImg()"
+    />
     <button type="submit" value="submit">
         submit
     </button>
