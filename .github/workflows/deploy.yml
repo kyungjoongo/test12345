@@ -94,7 +94,7 @@ jobs:
                     aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
                     aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
                     application_name: dist01
-                    environment_name: Dist-env
+                    environment_name: Dist01-env
                     region: ${{ secrets.AWS_REGION }}
                     version_label: ${{github.SHA}}
                     deployment_package: deploy.zip
