@@ -87,7 +87,7 @@ jobs:
 
             # Deploy to Elastic Beanstalk
             # application_name과 environment_name을 꼭 확인하자!
-            # 해당 부분은 꼭 같아야 한다!!
+            # 해당 부분은 꼭 같아야 한다!!_akjsdkajsdkjaksjdkasjkdjaskjdkasjd
             -   name: Deploy to EB
                 uses: einaregilsson/beanstalk-deploy@v14
                 with:
