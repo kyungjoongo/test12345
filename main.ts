@@ -62,7 +62,7 @@ main.use("/", boardRoutes);
 main.use("/", commentRouter);
 main.use("/", uploadRouter);
 
-const PORT = process.env.PORT || 500;
+const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
     console.log(`#################################`);
     console.log(`#################################`);
