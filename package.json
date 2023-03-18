@@ -1,12 +1,12 @@
 {
     "name": "typescript_server",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "dev": "ts-node-dev main.ts",
         "build": "tsc -p . && cp ./src/config/s3.json ./dist/src/config/s3.json",
-        "start" : "node dist/main.js"
+        "start2" : "node dist/main.js",
+        "start": "ts-node-dev main.ts"
     },
     "dependencies": {
         "aws-sdk": "^2.1329.0",
