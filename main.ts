@@ -1,16 +1,16 @@
 import express from "express";
 import bodyParser from "body-parser";
 import http from "http";
-import connectMongo from "./config/mongoConnect";
-import indexRoutes from "./routes/IndexRoute";
-import boardRoutes from "./routes/BoardRoutes";
-import loginRouter from "./routes/LoginRouter";
-import commentRouter from "./routes/CommentRoutes";
-import uploadRouter from "./routes/UploadRoute";
+import connectMongo from "./src/config/mongoConnect";
+import indexRoutes from "./src/routes/IndexRoute";
+import boardRoutes from "./src/routes/BoardRoutes";
+import loginRouter from "./src/routes/LoginRouter";
+import commentRouter from "./src/routes/CommentRoutes";
+import uploadRouter from "./src/routes/UploadRoute";
 // @ts-ignore
 const path = require('path');
-const app = express();
-const server = http.createServer(app);
+const main = express();
+const server = http.createServer(main);
 const {Server} = require("socket.io");
 const io = new Server(server);
 
@@ -19,11 +19,11 @@ const io = new Server(server);
 //todo: ####################
 const isProduction = process.env.NODE_ENV === "production";
 
-app.set('view engine', 'ejs');
-app.set('views', 'src/views');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static(path.join(__dirname, 'public')));
+main.set('view engine', 'ejs');
+main.set('views', 'src/views');
+main.use(bodyParser.json());
+main.use(bodyParser.urlencoded({extended: true}));
+main.use(express.static(path.join(__dirname, 'public')));
 
 //todo: ####################
 //todo: Connect Mongo
@@ -56,11 +56,11 @@ io.on('connection', (socket: any) => {
 //todo: ####################
 //todo:  includes Routes
 //todo: ####################
-app.use("/", indexRoutes);
-app.use("/", loginRouter);
-app.use("/", boardRoutes);
-app.use("/", commentRouter);
-app.use("/", uploadRouter);
+main.use("/", indexRoutes);
+main.use("/", loginRouter);
+main.use("/", boardRoutes);
+main.use("/", commentRouter);
+main.use("/", uploadRouter);
 
 
 const PORT = process.env.PORT || 3000;
