@@ -5,7 +5,8 @@
     "license": "MIT",
     "scripts": {
         "dev": "ts-node-dev main.ts",
-        "start": "export NODE_ENV=production && ts-node main.ts"
+        "build": "tsc -p . && cp ./src/config/s3.json ./dist/src/config/s3.json",
+        "start" : "node dist/main.js"
     },
     "dependencies": {
         "aws-sdk": "^2.1329.0",
