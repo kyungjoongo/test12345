@@ -13,7 +13,7 @@ jobs:
         strategy:
             # Node version은 12 버전을 이용한다.
             matrix:
-                node-version: [ '14.x' ]
+                node-version: [ '16.x' ]
 
         steps:
             -   uses: actions/checkout@v2
@@ -36,7 +36,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [ '14.x' ]
+                node-version: [ '16.x' ]
         # 위의 buildAndTest가 실행되고 진행된다.
         needs: buildAndTest
         steps:
