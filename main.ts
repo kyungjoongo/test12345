@@ -62,7 +62,7 @@ main.use("/", boardRoutes);
 main.use("/", commentRouter);
 main.use("/", uploadRouter);
 
-const PORT = 8081;
+const PORT = 5000;
 server.listen(PORT, () => {
     console.log(`#################################`);
     console.log(`#################################`);

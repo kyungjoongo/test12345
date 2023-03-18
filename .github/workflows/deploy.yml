@@ -1,6 +1,6 @@
 name: Deploy to EB
 
-# main branch에 push 되면 실행11111sfaasdfdasdfdasdasd
+# main branch에 push 되면 실행11111sfaasdfdasdfdasdasdsdfsdfsdfd
 on:
     push:
         branches:
