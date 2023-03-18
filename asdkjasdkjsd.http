@@ -1,0 +1,12 @@
+POST http://dist03-env.eba-tp9w8wyv.ap-northeast-2.elasticbeanstalk.com/board
+Content-Type: application/json
+
+{
+    "name": "sdflkgdflsklkgf",
+    "contents": "sdflkgdflsklkgf",
+    "title": "sdflkgdflsklkgf",
+    "createDate": "sdflkgdflsklkgf",
+    "pwd": "sdflkgdflsklkgf"
+}
+
+###

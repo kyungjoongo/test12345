@@ -11,7 +11,7 @@ jobs:
         name: CI Pipeline
         runs-on: ubuntu-18.04
         strategy:
-            # Node version은 12 버전을 이용한다.
+            # Node version은 16 버전을 이용한다.
             matrix:
                 node-version: [ '16.x' ]
 
@@ -44,7 +44,7 @@ jobs:
             # env 파일을 이용할 일이 보통 많은데,
             # Github Secrets를 이용하여 env 파일을 만들고 추가한다.
             # 참고로 ElasticBeanstalk에 Node 관련을 배포할 때는,
-            # 8081 포트를 열어줘야 한다!!asdas
+            # 8081 포트를 열어줘야 한다!!
             -   name: Create env file
                 run: |
                     touch .env
@@ -85,9 +85,8 @@ jobs:
             -   name: Generate deployment package
                 run: zip -r deploy.zip . -x '*.git*' './src/*' './aws/*' awscliv2.zip
 
-            # Deploy to Elastic Beanstalk_kjfksdjfkjsdf
+            # Deploy to Elastic Beanstalk
             # application_name과 environment_name을 꼭 확인하자!
-            # 해당 부분은 꼭 같아야 한다!!_akjsdkajsdkjaksjdkasjkdjaskjdkasjd1232312321asdfsdfasdfasdfdsf
             -   name: Deploy to EB
                 uses: einaregilsson/beanstalk-deploy@v21
                 with:
