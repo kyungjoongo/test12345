@@ -10,6 +10,10 @@ boardRoutes.get("/board", async (req: Request, res: Response, next: NextFunction
     try {
         let results = await boardModel.find();
 
+        let _reuslt2= JSON.parse(JSON.stringify(results))
+
+        console.log("sldkflskdflksdf===>" ,_reuslt2);
+
         console.log(results);
         return res.json(results);
     } catch (error: any) {
