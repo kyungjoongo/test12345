@@ -85,7 +85,7 @@ jobs:
             -   name: Generate deployment package
                 run: zip -r deploy.zip . -x '*.git*' './src/*' './aws/*' awscliv2.zip
 
-            # Deploy to Elastic Beanstalk
+            # Deploy to Elastic Beanstalk_kjfksdjfkjsdf
             # application_name과 environment_name을 꼭 확인하자!
             # 해당 부분은 꼭 같아야 한다!!_akjsdkajsdkjaksjdkasjkdjaskjdkasjd
             -   name: Deploy to EB
