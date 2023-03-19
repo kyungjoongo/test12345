@@ -7,6 +7,7 @@ import boardRoutes from "./src/routes/BoardRoutes";
 import loginRouter from "./src/routes/LoginRouter";
 import commentRouter from "./src/routes/CommentRoutes";
 import uploadRouter from "./src/routes/UploadRoute";
+import testRouter from "./src/routes/TestRoutes";
 // @ts-ignore
 const path = require('path');
 const app = express();
@@ -61,6 +62,7 @@ app.use("/", loginRouter);
 app.use("/", boardRoutes);
 app.use("/", commentRouter);
 app.use("/", uploadRouter);
+app.use("/", testRouter);
 
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {

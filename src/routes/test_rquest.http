@@ -1,0 +1,11 @@
+POST http://localhost:3000/test
+Content-Type: application/json
+
+{
+    "testId": "00001",
+    "comment": "고경준은 xxx입니다lsdkflskflksd",
+    "title": "고경준천재",
+    "pwd": "1114"
+}
+
+###
