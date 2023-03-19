@@ -9,3 +9,15 @@ Content-Type: application/json
 }
 
 ###
+
+POST http://dist03-env.eba-tp9w8wyv.ap-northeast-2.elasticbeanstalk.com/test
+Content-Type: application/json
+
+{
+    "testId": "00002",
+    "comment": "Gpex 토큰좀 주세요~~~~",
+    "title": "고경준천재",
+    "pwd": "1114"
+}
+
+###
